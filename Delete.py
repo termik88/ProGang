@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from transformers import pipeline
 from pydantic import BaseModel
-import json
 
 
 class Item(BaseModel):
@@ -14,7 +13,7 @@ classifier = pipeline("sentiment-analysis")
 
 @app.get("/")
 def root():
-    return {"message":"Hello World"}
+    return {"message": "Hello World"}
 
 
 @app.post("/predict/")
